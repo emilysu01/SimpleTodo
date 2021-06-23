@@ -1,10 +1,10 @@
 # Project 1 - *Simple Todo*
 
-**Simple Todo** is an android app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
+**Simple Todo** is an Android app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
 
 Submitted by: **Emily Su**
 
-Time spent: **5** hours spent in total
+Time spent: **7** hours spent in total
 
 ## User Stories
 
@@ -16,23 +16,28 @@ The following **required** functionality is completed:
 
 The following **bonus** features are implemented:
 
-* [ ] User can **tap a todo item in the list and bring up an edit screen for the todo item** and then have any changes to the text reflected back in the todo list
+* [x] User can **tap a todo item in the list and bring up an edit screen for the todo item** and then have any changes to the text reflected back in the todo list
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [x] Every todo item has a different color (any time a todo item is added, edited, or when the app restarts, the color of the todo item changes)
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='recording.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LICEcap](https://www.cockos.com/licecap/).
 
 ## Notes
-
-Describe any challenges encountered while building the app.
+Learned:
+- What CRUD and MVC are and how they are applied in this app
+- What an adapter is and how to use it
+- What an event listener is and how to use it
+Challenges:
+- Formatting the Add button on the main page (edited margins to fix this error)
+- Had difficulties with FileUtils from Android vs. from Apache Commons
 
 ## License
 
