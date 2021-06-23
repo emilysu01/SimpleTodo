@@ -29,12 +29,13 @@ Here's a walkthrough of implemented user stories (list of events for June 23rd):
 <img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LICEcap](https://www.cockos.com/licecap/).
+Color scheme from [Coolors](https://coolors.co/ffbe0b-fb5607-ff006e-8338ec-3a86ff).
 
 ## Notes
 Learned:
 - What CRUD and MVC are and how they are applied in this app
-- What an adapter is and how to use it
-- What an event listener is and how to use it
+- How to use adapters, event listeners, and intents
+
 Challenges:
 - Formatting the Add button on the main page (edited margins to fix this error)
 - Had difficulties with FileUtils from Android vs. from Apache Commons
