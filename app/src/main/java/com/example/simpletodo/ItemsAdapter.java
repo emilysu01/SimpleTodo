@@ -1,7 +1,8 @@
 package com.example.simpletodo;
 
-import android.text.Layout;
+import android.graphics.Color;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -9,10 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // Responsible for displaying data from the model into a row in the RecyclerView
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
+
+    String[] colors = {"#ffbe0b", "#fb5607", "#ff006e", "#8338ec", "#3a86ff"};
+    int colorsPtr = 0;
+
+    public interface OnClickListener {
+        void onItemClicked(int position);
+    }
 
     public interface OnLongClickListener {
         // The class that implements OnLongClickListener needs to know where the long press occured
@@ -21,11 +30,13 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     }
 
     List<String> items;
+    OnClickListener clickListener;
     OnLongClickListener longClickListener;
 
-    public ItemsAdapter(List<String> items, OnLongClickListener longClickListener) {
+    public ItemsAdapter(List<String> items, OnLongClickListener longClickListener, OnClickListener clickListener) {
         this.items = items;
         this.longClickListener = longClickListener;
+        this.clickListener = clickListener;
     }
 
     @NonNull
@@ -67,6 +78,14 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
         public void bind(String item) {
             // Get a reference to the View in bind that we can access
             tvItem.setText(item);
+            tvItem.setTextColor(Color.parseColor(colors[colorsPtr % colors.length]));
+            colorsPtr += 1;
+            tvItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    clickListener.onItemClicked(getAdapterPosition());
+                }
+            });
             tvItem.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 // Notify the listener which position was long pressed
